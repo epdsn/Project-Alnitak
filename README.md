@@ -75,6 +75,16 @@ PORT=5001 python3 app.py
 
 ### 4. Ask Questions
 
+**Option A: Interactive Console (Recommended)**
+```bash
+# Start the interactive console
+python3 console_app.py
+
+# Or connect to a different server
+python3 console_app.py --url http://your-server:port
+```
+
+**Option B: Direct API calls**
 ```bash
 # Test the API
 curl -X POST http://localhost:5001/ask \
@@ -110,6 +120,26 @@ python3 ingest_cli.py --reset --directory ./documents
 ```bash
 python3 ingest_cli.py --info
 ```
+
+### Interactive Console
+
+The easiest way to interact with Alnitak is through the interactive console:
+
+```bash
+# Start the console
+python3 console_app.py
+
+# Connect to a different server
+python3 console_app.py --url http://192.168.1.100:5001
+```
+
+**Console Commands:**
+- Type any question to ask Alnitak
+- `help` - Show available commands
+- `status` - Check server status
+- `info` - Show server information
+- `clear` - Clear the screen
+- `quit` or `exit` - Exit the application
 
 ### API Endpoints
 
@@ -196,8 +226,10 @@ Project-Alnitak/
 ├── qa.py               # 🧠 RAG assistant core logic
 ├── ingest.py           # 📚 Document ingestion module
 ├── ingest_cli.py       # 💻 CLI for document ingestion
+├── console_app.py      # 🖥️ Interactive console interface
 ├── requirements.txt    # 📦 Python dependencies
 ├── test_alnitak.py     # 🧪 Comprehensive test suite
+├── test_console.py     # 🧪 Console app test
 ├── simple_test.py      # ⚡ Quick Ollama test
 ├── README.md          # 📖 This file
 ├── test_document.md   # 📄 Example document
